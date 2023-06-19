@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  color: #24292f;
+}
