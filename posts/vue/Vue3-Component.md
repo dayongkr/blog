@@ -1,12 +1,8 @@
 ---
-
 title: Vue3 Component
 date: 2021-09-05 00:00:00
 tags: [vue, javascript]
-
 ---
-
-# Vue3 Component
 
 > ref. [Component Basics](https://v3.vuejs.org/guide/component-basics.html) + Props, Component Events, Lifecycle Hooks
 

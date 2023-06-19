@@ -4,8 +4,6 @@ date: 2021-08-29 00:00:00
 tags: [vue, composition-api]
 ---
 
-# Vue 3 Composition API
-
 > Vue3 완벽 마스터: 기초부터 실전까지 - "기본편" 중 섹션 3의 내용과 Vue 3 공식 문서를 참고하여 작성했다.
 
 ## Composition API

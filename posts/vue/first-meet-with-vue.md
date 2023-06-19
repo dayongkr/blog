@@ -4,8 +4,6 @@ date: 2023-04-05 00:00:00
 tags: [vue, javascript]
 ---
 
-# Vue와의 첫 만남
-
 ## Vue?
 
 공식 문서에 따르면 Vue는 User Interfaces를 build하기 위한 Javascript framework라고 나와 있고 선언적이고 component를 기반으로한 UI를 만들 수 있다고 간단히 설명이 되어 있다.

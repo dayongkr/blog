@@ -4,8 +4,6 @@ date: 2023-05-01 00:00:00
 tags: [javascript, promise, async/await]
 ---
 
-# Promise & Async/Await
-
 > ref. [Promises, async/await](https://javascript.info/callbacks)
 
 ## Callback function
