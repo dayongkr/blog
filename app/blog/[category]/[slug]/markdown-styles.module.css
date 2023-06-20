@@ -10,7 +10,7 @@
 }
 
 .markdown h2 {
-  @apply text-3xl my-3 font-bold leading-snug border-b border-gray-200 pb-2;
+  @apply text-3xl my-3 font-bold leading-snug border-b border-slate-200 pb-2;
 }
 
 .markdown h3 {
@@ -18,7 +18,7 @@
 }
 
 .markdown blockquote {
-  @apply border-l-slate-500 border-l-4 py-2 bg-slate-100 rounded-md
+  @apply border-l-slate-500 border-l-4 py-2 bg-slate-100 text-base
 }
 
 .markdown blockquote p {
@@ -51,15 +51,15 @@
 }
 
 .markdown table{
-  @apply my-6;
+  @apply my-6 text-base table-auto;
 }
 
 .markdown table th{
-  @apply bg-slate-100 border border-gray-200 px-4 py-1;
+  @apply bg-slate-100 px-4 py-1;
 }
 
 .markdown table td{
-  @apply border border-slate-200 px-4 py-1;
+  @apply border border-slate-200 px-4 py-1 ;
 }
 
 .markdown table tr:nth-child(even){
