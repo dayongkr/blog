@@ -11,7 +11,7 @@ export default function Bio() {
         className="w-40 h-40 rounded-full mr-6"
       />
       <div className="flex flex-wrap items-center">
-        <h2 className="text-4xl font-bold mb-2">Dayong Lee</h2>
+        <h2 className="text-5xl font-bold mb-2">Dayong Lee</h2>
         <p className="text-lg leading-7">
           <b>세상에 도움이 되는 것들을 만들고 싶고 생각하는 것을 좋아하는 </b>
           대학생입니다! 성균관대학교 소프트웨어학과에 재학중이며 주로 웹 개발

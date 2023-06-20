@@ -1,14 +1,14 @@
 export default function PostHead({
   title,
-  author,
+  date,
 }: {
   title: string;
-  author: string;
+  date: string;
 }) {
   return (
     <div>
-      <h2>{title}</h2>
-      <p>{author}</p>
+      <h2 className="font-bold text-5xl mt-7 mb-3">{title}</h2>
+      <p className="text-lg text-slate-500">{date}</p>
     </div>
   );
 }

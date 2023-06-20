@@ -16,16 +16,20 @@ export default async function Post({
 }) {
   const post = getPostBySlug(`${params.category}/${params.slug}`, [
     "title",
-    "author",
+    "date",
     "content",
   ]);
   metadata.title = post.title;
   const content = await markdownToHtml(post.content || "");
 
   return (
-    <div className={markdownStyles["markdown"]}>
-      <PostHead title={post.title} author={post.author} />
-      <PostBody content={content} />
+    <div className="flex flex-wrap justify-center">
+      <div className="w-full max-w-screen-md">
+        <PostHead title={post.title} date={post.date} />
+        <div className={markdownStyles["markdown"]}>
+          <PostBody content={content} />
+        </div>
+      </div>
     </div>
   );
 }

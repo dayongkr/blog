@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 * {
-  color: #24292f;
+  @apply text-slate-900
 }
