@@ -12,7 +12,7 @@ tags: [vue, javascript]
 
 ### Design pattern
 
-![mvvm](./imgs/2023-04-05-09-52-08.png)
+![mvvm](/imgs/2023-04-05-09-52-08.png)
 
 따르고 있는 Design pattern은 MVVM(Model, View, View Model)으로 UI와 비 UI 코드를 분리할 수 있다. 즉 Model은 비 UI 코드(데이터)를 담당하고 View는 UI를 담당하며 View Model은 View에 바인딩을 하여 Model의 데이터를 View에 표현한다. 이러한 구조는 Model과 View를 분리하여 유지보수가 쉽고, 재사용성이 높아진다.
 

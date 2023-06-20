@@ -27,7 +27,7 @@ export default async function Post({
       <div className="w-full max-w-screen-md">
         <PostHead title={post.title} date={post.date} />
         <div className={markdownStyles["markdown"]}>
-          <PostBody content={content} />
+          <PostBody content={post.content} />
         </div>
       </div>
     </div>
