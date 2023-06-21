@@ -15,8 +15,8 @@ export default function RootLayout({
     <html lang="ko" className="light">
       <body className="font-sans">
         <Header title={metadata.title} />
-        <main className="w-full flex justify-center">
-          <div className="max-w-screen-xl p-5">{children}</div>
+        <main className="flex justify-center">
+          <div className="w-full max-w-screen-xl p-5">{children}</div>
         </main>
       </body>
     </html>
