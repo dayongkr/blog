@@ -26,7 +26,7 @@ export default function PostItem({ title, date, tags, slug }: Props) {
       </h3>
       <p className="mt-1 text-sm text-gray-500">{date}</p>
       <p className="mt-3 text-gray-600">
-        nest.js로 이전하게 된 계기와 이전하면서 새롭게 알게 된 블로그 관련
+        next.js로 이전하게 된 계기와 이전하면서 새롭게 알게 된 블로그 관련
         정보들을 정리해 보았습니다.
       </p>
       <div className="flex gap-2 mt-3">

@@ -10,62 +10,74 @@
 }
 
 .markdown h2 {
-  @apply text-3xl my-3 font-bold leading-snug border-b border-slate-200 pb-2;
+  @apply text-3xl mt-10 my-4 font-bold leading-snug border-b border-slate-200 pb-2;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 font-bold leading-snug;
+  @apply text-2xl mt-10 mb-4 font-bold leading-snug;
+}
+
+.markdown h4 {
+  @apply font-bold;
 }
 
 .markdown blockquote {
-  @apply border-l-slate-500 border-l-4 py-2 bg-slate-100 text-base
+  @apply border-l-slate-900 border-l-4 py-4 bg-slate-50;
 }
 
 .markdown blockquote p {
   @apply my-0 mx-3 text-slate-600;
 }
 
-.markdown ul{
+.markdown ul {
   @apply list-disc list-inside;
 }
 
-.markdown ol{
+.markdown ol {
   @apply list-decimal list-inside;
 }
 
-.markdown ul ul{
+.markdown ul ul {
   @apply mx-6 my-1;
   list-style-type: circle;
 }
 
-.markdown ol ol{
+.markdown ol ol {
   @apply mx-6 my-1;
 }
 
-.markdown li{
-  @apply list-inside
+.markdown li {
+  @apply list-inside;
 }
 
-.markdown a{
+.markdown a {
   @apply text-teal-600 hover:underline;
 }
 
-.markdown table{
+.markdown table {
   @apply my-6 text-base table-auto;
 }
 
-.markdown table th{
+.markdown table th {
   @apply bg-slate-100 px-4 py-1;
 }
 
-.markdown table td{
-  @apply border border-slate-200 px-4 py-1 ;
+.markdown table td {
+  @apply border border-slate-200 px-4 py-1;
 }
 
-.markdown table tr:nth-child(even){
+.markdown table tr:nth-child(even) {
   @apply bg-slate-50;
 }
 
-.markdown table tr{
+.markdown table tr {
   @apply border border-slate-200;
+}
+
+.markdown code {
+  @apply text-sm rounded;
+}
+
+.markdown *:not(pre) > code {
+  @apply bg-slate-200 p-1 mx-1;
 }

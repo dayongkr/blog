@@ -1,5 +1,4 @@
 import { getPostBySlug } from "@/lib/api";
-import markdownToHtml from "@/lib/markdownToHtml";
 import PostBody from "@/components/post-body";
 import PostHead from "@/components/post-head";
 import markdownStyles from "./markdown-styles.module.css";
@@ -20,7 +19,6 @@ export default async function Post({
     "content",
   ]);
   metadata.title = post.title;
-  const content = await markdownToHtml(post.content || "");
 
   return (
     <div className="flex flex-wrap justify-center">
