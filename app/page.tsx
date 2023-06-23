@@ -8,10 +8,10 @@ export default function Home() {
     <>
       <Bio />
       <div className="mt-5">
-        <h2 className="text-xl font-bold pb-3 mb-5 border-b border-gray-200">
+        <h2 className="mb-5 border-b border-gray-200 pb-3 text-xl font-bold">
           Latest posts
         </h2>
-        <div className="grid grid-cols-1 gap-5 xl:grid-cols-3 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {posts.map(({ title, date, tags, slug }) => (
             <PostItem
               title={title}

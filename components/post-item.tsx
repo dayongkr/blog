@@ -13,7 +13,7 @@ export default function PostItem({ title, date, tags, slug }: Props) {
   return (
     <article className="border-b-gray-200 border-b pb-6 mb-6">
       <div className="w-full rounded-lg overflow-hidden flex justify-center items-center">
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/posts/${slug}`}>
           <Image
             src={dummyImage}
             alt="post cover"
@@ -22,7 +22,7 @@ export default function PostItem({ title, date, tags, slug }: Props) {
         </Link>
       </div>
       <h3 className="text-2xl font-bold mt-5">
-        <Link href={`/blog/${slug}`}>{title}</Link>
+        <Link href={`/posts/${slug}`}>{title}</Link>
       </h3>
       <p className="mt-1 text-sm text-gray-500">{date}</p>
       <p className="mt-3 text-gray-600">

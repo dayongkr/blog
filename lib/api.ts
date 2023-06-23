@@ -3,7 +3,7 @@ import { join } from 'path'
 import matter from 'gray-matter'
 import { Items } from '@/types/interface';
 
-const categoryDirectory = join(process.cwd(), 'posts')
+const categoryDirectory = join(process.cwd(), '_posts')
 
 export function getCategorySlugs() {
   return fs.readdirSync(categoryDirectory)
