@@ -2,6 +2,7 @@ import { getPostBySlug } from "@/lib/api";
 import PostBody from "@/components/post-body";
 import PostHead from "@/components/post-head";
 import markdownStyles from "./markdown-styles.module.css";
+import Comment from "@/components/client/comment";
 
 export const metadata = {
   title: "Dayong Blog",
@@ -27,6 +28,7 @@ export default async function Post({
         <div className={markdownStyles["markdown"]}>
           <PostBody content={post.content} />
         </div>
+        <Comment />
       </div>
     </div>
   );
