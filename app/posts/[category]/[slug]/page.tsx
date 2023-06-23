@@ -21,7 +21,7 @@ export default async function Post({
   metadata.title = post.title;
 
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap  justify-center">
       <div className="w-full max-w-screen-md">
         <PostHead title={post.title} date={post.date} />
         <div className={markdownStyles["markdown"]}>
