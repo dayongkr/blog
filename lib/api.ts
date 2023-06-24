@@ -66,3 +66,18 @@ export const getAllPosts = cache((fields: string[]) => {
   })
   return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1)) // sort posts by date in descending order
 })
+
+export const getAllPostsByCategory = cache((category: string, fields: string[]) => {
+  const slugs = getPostSlugs()
+  const posts: Items[] = []
+  slugs.forEach((slug) => {
+    const categorySlug = slug[0]
+    if (categorySlug === category) {
+      slug.slice(1).forEach((postSlug) => {
+        const post = getPostBySlug(`${categorySlug}/${postSlug}`, fields)
+        posts.push(post)
+      })
+    }
+  })
+  return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1)) // sort posts by date in descending order
+})

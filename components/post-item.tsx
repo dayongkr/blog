@@ -7,7 +7,7 @@ interface Props {
   date: string;
   tags: string[];
   slug: string;
-  category: string;
+  category?: string;
 }
 
 export default function PostItem({ title, date, tags, slug, category }: Props) {
@@ -22,18 +22,20 @@ export default function PostItem({ title, date, tags, slug, category }: Props) {
           />
         </Link>
       </div>
-      <Link href={`/posts/${category}`} className="text-slate-500 font-bold">
-        {category}
-      </Link>
+      {category && (
+        <Link href={`/posts/${category}`} className="font-bold text-slate-500">
+          {category}
+        </Link>
+      )}
       <h3 className="mt-1 text-2xl font-extrabold">
         <Link href={`/posts/${slug}`}>{title}</Link>
       </h3>
-      {/* <p className="mt-1 text-sm text-gray-500">{date}</p> */}
       <p className="mt-3 text-gray-600">
         next.js로 이전하게 된 계기와 이전하면서 새롭게 알게 된 블로그 관련
         정보들을 정리해 보았습니다.
       </p>
-      <div className="mt-3 flex gap-2">
+      <p className="mt-3 text-sm text-gray-400">{date}</p>
+      {/* <div className="mt-3 flex gap-2">
         {tags.map((tag: string) => (
           <a
             href="/"
@@ -43,7 +45,7 @@ export default function PostItem({ title, date, tags, slug, category }: Props) {
             {tag}
           </a>
         ))}
-      </div>
+      </div> */}
     </article>
   );
 }
