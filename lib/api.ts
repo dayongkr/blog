@@ -2,6 +2,7 @@ import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
 import { Items } from '@/types/interface';
+import { cache } from 'react';
 
 const categoryDirectory = join(process.cwd(), '_posts')
 
@@ -21,7 +22,7 @@ export function getPostSlugs() {
   return postSlugs // [categorySlug, ...postSlug]
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+export const getPostBySlug = cache((slug: string, fields: string[] = []) => {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(categoryDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -29,12 +30,18 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 
   const items: Items = {} as Items
 
+
   fields.forEach((field) => {
     if (field === 'slug') {
       items[field] = realSlug
     }
     if (field === 'content') {
       items[field] = content
+    }
+
+    if (field === 'category') {
+      const categorySlug = realSlug.split('/')[0]
+      items[field] = categorySlug
     }
 
     if (typeof data[field] !== 'undefined') {
@@ -45,9 +52,9 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     }
   })
   return items
-}
+})
 
-export function getAllPosts(fields: string[] = []) {
+export const getAllPosts = cache((fields: string[]) => {
   const slugs = getPostSlugs()
   const posts: Items[] = []
   slugs.forEach((slug) => {
@@ -58,4 +65,4 @@ export function getAllPosts(fields: string[] = []) {
     })
   })
   return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1)) // sort posts by date in descending order
-}
+})

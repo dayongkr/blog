@@ -7,12 +7,13 @@ interface Props {
   date: string;
   tags: string[];
   slug: string;
+  category: string;
 }
 
-export default function PostItem({ title, date, tags, slug }: Props) {
+export default function PostItem({ title, date, tags, slug, category }: Props) {
   return (
     <article className="mb-6 border-b border-b-gray-200 pb-6">
-      <div className="flex w-full items-center justify-center overflow-hidden rounded-lg">
+      <div className="mb-3 flex w-full items-center justify-center overflow-hidden rounded-lg">
         <Link href={`/posts/${slug}`}>
           <Image
             src={dummyImage}
@@ -21,10 +22,13 @@ export default function PostItem({ title, date, tags, slug }: Props) {
           />
         </Link>
       </div>
-      <h3 className="mt-5 text-2xl font-bold">
+      <Link href={`/posts/${category}`} className="text-slate-500 font-bold">
+        {category}
+      </Link>
+      <h3 className="mt-1 text-2xl font-extrabold">
         <Link href={`/posts/${slug}`}>{title}</Link>
       </h3>
-      <p className="mt-1 text-sm text-gray-500">{date}</p>
+      {/* <p className="mt-1 text-sm text-gray-500">{date}</p> */}
       <p className="mt-3 text-gray-600">
         next.js로 이전하게 된 계기와 이전하면서 새롭게 알게 된 블로그 관련
         정보들을 정리해 보았습니다.
