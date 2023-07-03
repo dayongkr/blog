@@ -24,8 +24,14 @@ export default async function Post({
   return (
     <div className="flex flex-wrap  justify-center">
       <div className="w-full max-w-screen-md">
-        <PostHead title={post.title} date={post.date} category={params.category} />
-        <div className={`${markdownStyles["markdown"]} mb-10 border-b border-slate-200 pb-10`}>
+        <PostHead
+          title={post.title}
+          date={post.date}
+          category={params.category}
+        />
+        <div
+          className={`${markdownStyles["markdown"]} mb-10 border-b border-slate-200 pb-10`}
+        >
           <PostBody content={post.content} />
         </div>
         <Comment />

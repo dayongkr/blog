@@ -22,11 +22,15 @@ export function getPostSlugs() {
   return postSlugs // [categorySlug, ...postSlug]
 }
 
+function firstFourLines(file: { excerpt: any; content: string; }, options: any) {
+  file.excerpt = file.content.split('\n').slice(0, 4).join(' ');
+}
+
 export const getPostBySlug = cache((slug: string, fields: string[] = []) => {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(categoryDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data, content } = matter(fileContents)
+  const { data, content, excerpt } = matter(fileContents, { excerpt: firstFourLines })
 
   const items: Items = {} as Items
 
@@ -42,6 +46,10 @@ export const getPostBySlug = cache((slug: string, fields: string[] = []) => {
     if (field === 'category') {
       const categorySlug = realSlug.split('/')[0]
       items[field] = categorySlug
+    }
+
+    if (field === 'excerpt') {
+      items[field] = excerpt as string
     }
 
     if (typeof data[field] !== 'undefined') {

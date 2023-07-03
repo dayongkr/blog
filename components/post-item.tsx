@@ -1,5 +1,4 @@
 import Image from "next/image";
-import dummyImage from "@/public/dummy.png";
 import Link from "next/link";
 
 interface Props {
@@ -8,32 +7,49 @@ interface Props {
   tags: string[];
   slug: string;
   category?: string;
+  cover: string;
+  excerpt: string;
 }
 
-export default function PostItem({ title, date, tags, slug, category }: Props) {
+export default function PostItem({
+  title,
+  date,
+  tags,
+  slug,
+  category,
+  cover,
+  excerpt,
+}: Props) {
+  console.log(excerpt);
   return (
     <article className="mb-6 border-b border-b-gray-200 pb-6">
-      <div className="mb-3 flex w-full items-center justify-center overflow-hidden rounded-lg">
-        <Link href={`/posts/${slug}`}>
-          <Image
-            src={dummyImage}
-            alt="post cover"
-            className="transition-transform duration-700 ease-in-out hover:scale-110"
-          />
-        </Link>
-      </div>
-      {category && (
+      <Link href={`/posts/${slug}`}>
+        {cover ? (
+          <div className="relative mb-3 flex h-64 w-full items-center justify-center overflow-hidden rounded-lg">
+            <Image
+              src={cover}
+              alt="post cover"
+              className="object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+              fill={true}
+            />
+          </div>
+        ) : (
+          <div className="mb-3 flex h-64 w-full overflow-hidden rounded-lg bg-teal-600">
+            <div className="flex h-full w-full items-center justify-center text-2xl font-bold text-white transition-transform  duration-700 ease-in-out hover:scale-110">
+              {title}
+            </div>
+          </div>
+        )}
+      </Link>
+      {/* {category && (
         <Link href={`/posts/${category}`} className="font-bold text-slate-500">
           {category}
         </Link>
-      )}
+      )} */}
       <h3 className="mt-1 text-2xl font-extrabold">
         <Link href={`/posts/${slug}`}>{title}</Link>
       </h3>
-      <p className="mt-3 text-gray-600">
-        next.js로 이전하게 된 계기와 이전하면서 새롭게 알게 된 블로그 관련
-        정보들을 정리해 보았습니다.
-      </p>
+      <p className="mt-3 text-gray-600">{excerpt}</p>
       <p className="mt-3 text-sm text-gray-400">{date}</p>
       {/* <div className="mt-3 flex gap-2">
         {tags.map((tag: string) => (

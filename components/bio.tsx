@@ -4,11 +4,11 @@ import githubIcon from "@/public/github.svg";
 
 export default function Bio() {
   return (
-    <div className="flex w-full max-w-screen-md flex-nowrap justify-center py-5">
+    <div className="flex w-full max-w-screen-md flex-nowrap justify-center gap-5 py-5 max-md:flex-wrap">
       <Image
         src={profilePic}
         alt="picture of the author"
-        className="mr-6 h-40 w-40 rounded-full"
+        className="h-40 w-40 rounded-full"
       />
       <div className="flex flex-wrap items-center">
         <h2 className="mb-2 text-5xl font-extrabold">Dayong Lee</h2>

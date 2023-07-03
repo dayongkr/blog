@@ -3,7 +3,15 @@ import Bio from "@/components/bio";
 import PostItem from "@/components/post-item";
 
 export default function Home() {
-  const posts = getAllPosts(["title", "date", "tags", "slug","category"]);
+  const posts = getAllPosts([
+    "title",
+    "date",
+    "tags",
+    "slug",
+    "category",
+    "cover",
+    "excerpt",
+  ]);
   return (
     <>
       <Bio />
@@ -12,16 +20,20 @@ export default function Home() {
           Latest posts
         </h2>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {posts.map(({ title, date, tags, slug,category }) => (
-            <PostItem
-              title={title}
-              date={date}
-              tags={tags as unknown as string[]}
-              slug={slug}
-              key={slug}
-              category={category}
-            />
-          ))}
+          {posts.map(
+            ({ title, date, tags, slug, category, cover, excerpt }) => (
+              <PostItem
+                title={title}
+                date={date}
+                tags={tags as unknown as string[]}
+                slug={slug}
+                key={slug}
+                category={category}
+                cover={cover}
+                excerpt={excerpt}
+              />
+            )
+          )}
         </div>
       </div>
     </>
