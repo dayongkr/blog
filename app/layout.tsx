@@ -1,5 +1,8 @@
 import "./globals.css";
 import Header from "@/components/header";
+import { Noto_Sans } from "next/font/google";
+
+const Noto = Noto_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
   title: "Dayong Blog",
@@ -13,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className="light">
-      <body className="font-sans">
+      <body className={Noto.className}>
         <Header title={metadata.title} />
         <main className="flex justify-center">
           <div className="w-full max-w-screen-xl p-5">{children}</div>
