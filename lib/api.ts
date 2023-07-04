@@ -22,15 +22,15 @@ export function getPostSlugs() {
   return postSlugs // [categorySlug, ...postSlug]
 }
 
-function firstFourLines(file: { excerpt: any; content: string; }) {
-  file.excerpt = file.content.split('\n').slice(0, 4).join(' ');
+function firstTwoLines(file: { excerpt: any; content: string; }) {
+  file.excerpt = file.content.split('\n').slice(0, 2).join(' ');
 }
 
 export const getPostBySlug = cache((slug: string, fields: string[] = []) => {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(categoryDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data, content, excerpt } = matter(fileContents, { excerpt: firstFourLines as unknown as boolean })
+  const { data, content, excerpt } = matter(fileContents, { excerpt: firstTwoLines as unknown as boolean }) // 임시로 boolean으로 타입 처리
 
   const items: Items = {} as Items
 

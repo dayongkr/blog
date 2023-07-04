@@ -18,22 +18,24 @@ export default async function Post({
     "title",
     "date",
     "content",
+    "cover",
   ]);
   metadata.title = post.title;
 
   return (
-    <div className="flex flex-wrap  justify-center">
+    <div className="flex w-full flex-col items-center">
+      <PostHead
+        title={post.title}
+        date={post.date}
+        category={params.category}
+        cover={post.cover}
+      />
+      <div
+        className={`${markdownStyles["markdown"]} mb-10 w-full max-w-screen-md border-b border-slate-200 pb-10`}
+      >
+        <PostBody content={post.content} />
+      </div>
       <div className="w-full max-w-screen-md">
-        <PostHead
-          title={post.title}
-          date={post.date}
-          category={params.category}
-        />
-        <div
-          className={`${markdownStyles["markdown"]} mb-10 border-b border-slate-200 pb-10`}
-        >
-          <PostBody content={post.content} />
-        </div>
         <Comment />
       </div>
     </div>

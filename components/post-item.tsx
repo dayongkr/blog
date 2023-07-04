@@ -20,7 +20,6 @@ export default function PostItem({
   cover,
   excerpt,
 }: Props) {
-  console.log(excerpt);
   return (
     <article className="mb-6 border-b border-b-gray-200 pb-6">
       <Link href={`/posts/${slug}`}>
@@ -49,7 +48,7 @@ export default function PostItem({
       <h3 className="mt-1 text-2xl font-extrabold">
         <Link href={`/posts/${slug}`}>{title}</Link>
       </h3>
-      <p className="mt-3 text-gray-600">{excerpt}</p>
+      <p className="mt-3 text-gray-600 line-clamp-2">{excerpt}</p>
       <p className="mt-3 text-sm text-gray-400">{date}</p>
       {/* <div className="mt-3 flex gap-2">
         {tags.map((tag: string) => (

@@ -20,12 +20,14 @@ export const mdxComponents: MDXComponents = {
   },
   img: ({ src, alt, width, height }) => {
     return (
-      <Image
-        src={src || "/profile.png"}
-        alt={alt || "alt"}
-        width={(width as number) || 500}
-        height={(height as number) || 300}
-      />
+      <div className="overflow-hidden rounded-lg">
+        <Image
+          src={src || "/profile.png"}
+          alt={alt || "alt"}
+          width={(width as number) || 500}
+          height={(height as number) || 300}
+        />
+      </div>
     );
   },
 };

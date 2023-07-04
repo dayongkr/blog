@@ -1,5 +1,5 @@
 .markdown {
-  @apply text-lg leading-relaxed break-all;
+  @apply break-words text-lg leading-relaxed;
 }
 
 .markdown p,
@@ -10,11 +10,11 @@
 }
 
 .markdown h2 {
-  @apply text-3xl mt-10 my-4 font-bold leading-snug border-b border-slate-200 pb-2;
+  @apply my-4 mt-10 border-b border-slate-200 pb-2 text-3xl font-bold leading-snug;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-10 mb-4 font-bold leading-snug;
+  @apply mb-4 mt-10 text-2xl font-bold leading-snug;
 }
 
 .markdown h4 {
@@ -22,19 +22,19 @@
 }
 
 .markdown blockquote {
-  @apply border-l-slate-900 border-l-4 py-4 bg-slate-50;
+  @apply border-l-4 border-l-slate-900 bg-slate-50 py-4;
 }
 
 .markdown blockquote p {
-  @apply my-0 mx-3 text-slate-600;
+  @apply mx-3 my-0 text-slate-600;
 }
 
 .markdown ul {
-  @apply list-disc list-inside;
+  @apply list-inside list-disc;
 }
 
 .markdown ol {
-  @apply list-decimal list-inside;
+  @apply list-inside list-decimal;
 }
 
 .markdown ul ul {
@@ -55,7 +55,7 @@
 }
 
 .markdown table {
-  @apply my-6 text-base table-auto;
+  @apply my-6 table-auto text-base;
 }
 
 .markdown table th {
@@ -75,9 +75,9 @@
 }
 
 .markdown code {
-  @apply text-sm rounded;
+  @apply rounded text-sm;
 }
 
 .markdown *:not(pre) > code {
-  @apply bg-slate-200 p-1 mx-1;
+  @apply mx-1 bg-slate-200 p-1;
 }
