@@ -18,7 +18,9 @@ export default function RootLayout({
         <main className="flex justify-center">
           <div className="w-full max-w-screen-xl p-5">{children}</div>
         </main>
-        <footer className="h-32"></footer>
+        <footer className="flex h-32 items-center justify-center text-slate-700">
+          Copyright © Dayong Lee 2023
+        </footer>
       </body>
     </html>
   );
