@@ -21,6 +21,10 @@
   @apply font-bold;
 }
 
+.markdown p:has(img) {
+  @apply flex w-full justify-center;
+}
+
 .markdown blockquote {
   @apply border-l-4 border-l-slate-900 bg-slate-50 py-4;
 }
