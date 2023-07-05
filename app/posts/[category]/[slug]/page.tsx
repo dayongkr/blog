@@ -19,8 +19,10 @@ export default async function Post({
     "date",
     "content",
     "cover",
+    "excerpt",
   ]);
   metadata.title = post.title;
+  metadata.description = post.excerpt;
 
   return (
     <div className="flex w-full flex-col items-center">
