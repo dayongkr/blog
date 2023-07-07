@@ -13,7 +13,7 @@ export const mdxComponents: MDXComponents = {
   a: ({ children, href, ...props }) => {
     return (
       // @ts-expect-error legacy refs
-      <Link href={href || ""} {...props}>
+      <Link href={href || ""} {...props} target="_blank">
         {children}
       </Link>
     );
@@ -26,6 +26,7 @@ export const mdxComponents: MDXComponents = {
         width={(width as number) || 500}
         height={(height as number) || 300}
         className="my-5 overflow-hidden rounded-lg"
+        priority={true}
       />
     );
   },

@@ -1,5 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { mdxComponents } from "./markdown-compoents";
+import { mdxComponents } from "./markdown-components";
 import remarkGfm from "remark-gfm";
 
 export default function PostBody({ content }: { content: string }) {

@@ -55,7 +55,7 @@
 }
 
 .markdown a {
-  @apply text-teal-600 hover:underline;
+  @apply font-semibold text-teal-600 hover:underline;
 }
 
 .markdown table {
