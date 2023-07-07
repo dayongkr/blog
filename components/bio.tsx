@@ -4,7 +4,7 @@ import githubIcon from "@/public/github.svg";
 
 export default function Bio() {
   return (
-    <div className="flex w-full max-w-screen-md flex-nowrap justify-center gap-5 py-5 max-md:flex-wrap">
+    <section className="flex w-full max-w-screen-md flex-nowrap justify-center gap-5 py-5 max-md:flex-wrap">
       <Image
         src={profilePic}
         alt="picture of the author"
@@ -25,6 +25,6 @@ export default function Bio() {
           />
         </a>
       </div>
-    </div>
+    </section>
   );
 }

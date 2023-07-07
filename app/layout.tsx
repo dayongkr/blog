@@ -17,13 +17,15 @@ export default function RootLayout({
   return (
     <html lang="ko" className="light">
       <body className={Noto.className}>
-        <Header title={metadata.title} />
-        <main className="flex justify-center">
-          <div className="w-full max-w-screen-xl p-5">{children}</div>
-        </main>
-        <footer className="flex h-32 items-center justify-center text-slate-700">
-          Copyright © Dayong Lee 2023
-        </footer>
+        <div className="flex flex-col items-center">
+          <Header title={metadata.title} />
+          <div className="flex w-full max-w-screen-xl flex-col justify-center p-5">
+            {children}
+          </div>
+          <footer className="flex h-32 items-center justify-center text-slate-700">
+            Copyright © Dayong Lee 2023
+          </footer>
+        </div>
       </body>
     </html>
   );

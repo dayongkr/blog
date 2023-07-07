@@ -32,11 +32,11 @@ export default async function Post({
         category={params.category}
         cover={post.cover}
       />
-      <div
+      <main
         className={`${markdownStyles["markdown"]} mb-10 w-full max-w-screen-md border-b border-slate-200 pb-10`}
       >
         <PostBody content={post.content} />
-      </div>
+      </main>
       <div className="w-full max-w-screen-md">
         <Comment />
       </div>

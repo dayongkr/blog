@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Bio />
-      <div className="mt-5">
+      <section className="mt-5">
         <h2 className="mb-5 border-b border-gray-200 pb-3 text-xl font-bold">
           Latest posts
         </h2>
@@ -35,7 +35,7 @@ export default function Home() {
             )
           )}
         </div>
-      </div>
+      </section>
     </>
   );
 }
