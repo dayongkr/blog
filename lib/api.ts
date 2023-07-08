@@ -27,39 +27,43 @@ function firstTwoLines(file: { excerpt: any; content: string; }) {
 }
 
 export const getPostBySlug = cache((slug: string, fields: string[] = []) => {
-  const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(categoryDirectory, `${realSlug}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data, content, excerpt } = matter(fileContents, { excerpt: firstTwoLines as unknown as boolean }) // 임시로 boolean으로 타입 처리
+  try {
+    const realSlug = slug.replace(/\.md$/, '')
+    const fullPath = join(categoryDirectory, `${realSlug}.md`)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const { data, content, excerpt } = matter(fileContents, { excerpt: firstTwoLines as unknown as boolean }) // 임시로 boolean으로 타입 처리
 
-  const items: Items = {} as Items
+    const items: Items = {} as Items
 
 
-  fields.forEach((field) => {
-    if (field === 'slug') {
-      items[field] = realSlug
-    }
-    if (field === 'content') {
-      items[field] = content
-    }
+    fields.forEach((field) => {
+      if (field === 'slug') {
+        items[field] = realSlug
+      }
+      if (field === 'content') {
+        items[field] = content
+      }
 
-    if (field === 'category') {
-      const categorySlug = realSlug.split('/')[0]
-      items[field] = categorySlug
-    }
+      if (field === 'category') {
+        const categorySlug = realSlug.split('/')[0]
+        items[field] = categorySlug
+      }
 
-    if (field === 'excerpt') {
-      items[field] = excerpt as string
-    }
+      if (field === 'excerpt') {
+        items[field] = excerpt as string
+      }
 
-    if (typeof data[field] !== 'undefined') {
-      if (field === 'date')
-        items[field] = data[field].toLocaleDateString('ko-KR');
-      else
-        items[field] = data[field]
-    }
-  })
-  return items
+      if (typeof data[field] !== 'undefined') {
+        if (field === 'date')
+          items[field] = data[field].toLocaleDateString('ko-KR');
+        else
+          items[field] = data[field]
+      }
+    })
+    return items
+  } catch (err) {
+    return { title: "", date: "", content: "", cover: "", excerpt: "" }
+  }
 })
 
 export const getAllPosts = cache((fields: string[]) => {
