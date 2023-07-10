@@ -34,7 +34,7 @@ export default function PostItem({
           </div>
         ) : (
           <div className="mb-3 flex h-64 w-full overflow-hidden rounded-lg bg-teal-600">
-            <div className="flex h-full w-full items-center justify-center text-2xl font-bold text-white transition-transform  duration-700 ease-in-out hover:scale-110">
+            <div className="flex h-full w-full items-center justify-center text-center text-2xl font-bold text-white transition-transform  duration-700 ease-in-out hover:scale-110">
               {title}
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function PostItem({
       <h3 className="mt-1 text-2xl font-extrabold">
         <Link href={`/posts/${slug}`}>{title}</Link>
       </h3>
-      <p className="mt-3 text-gray-600 line-clamp-2">{excerpt}</p>
+      <p className="mt-3 line-clamp-2 text-gray-600">{excerpt}</p>
       <p className="mt-3 text-gray-500">{date}</p>
       {/* <div className="mt-3 flex gap-2">
         {tags.map((tag: string) => (
