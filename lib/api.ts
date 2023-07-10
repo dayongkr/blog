@@ -23,7 +23,9 @@ export function getPostSlugs() {
 }
 
 function firstTwoLines(file: { excerpt: any; content: string; }) {
-  file.excerpt = file.content.split('\n').slice(0, 2).join(' ');
+  file.excerpt = file.content.split('\n').slice(0, 4).filter(item => item[0] !== '>' && item && item.length > 0
+  ).join(' ');
+  console.log(file.excerpt)
 }
 
 export const getPostBySlug = cache((slug: string, fields: string[] = []) => {
