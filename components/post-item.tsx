@@ -34,7 +34,7 @@ export default function PostItem({
           </div>
         ) : (
           <div className="mb-3 flex h-64 w-full overflow-hidden rounded-lg bg-teal-600">
-            <div className="flex h-full w-full items-center justify-center text-center text-2xl font-bold text-white transition-transform  duration-700 ease-in-out hover:scale-110">
+            <div className="flex h-full w-full items-center justify-center p-5 text-center text-2xl font-bold text-white transition-transform  duration-700 ease-in-out hover:scale-110">
               {title}
             </div>
           </div>
