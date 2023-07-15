@@ -16,7 +16,7 @@ export default function PostHead({
     <>
       <section className="my-10 w-full max-w-screen-md border-b border-slate-200 py-5">
         <p className="text-2xl font-bold capitalize text-teal-600">
-          {category} /{" "}
+          {category} /
         </p>
         <h2 className="text-5xl font-bold leading-snug">{title}</h2>
         <div className="mt-5 flex items-center gap-2">
