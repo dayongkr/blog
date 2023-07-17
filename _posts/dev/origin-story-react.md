@@ -2,7 +2,6 @@
 title: Origin Story - React maded by Honeypot 요약 및 정리
 date: 2023-07-12 14:36:00
 tags: [react, javascript, web]
-category: dev
 ---
 
 이번에 교내 멘토링을 진행하게 되면서 React에 대해 소개하게 되었는데 무작정 기술적인 개념만 설명하기보다는 탄생 배경을 함께 설명하면 이해하기 쉽지 않을까 생각했다. 하지만 그동안 기술적인 개념만 공부해왔지 React의 탄생 배경에는 관심이 없었다.

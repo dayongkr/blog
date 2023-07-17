@@ -58,6 +58,7 @@ export const getPostBySlug = cache((slug: string, fields: string[] = []) => {
         if (field === 'date') {
           const date = new Date(data[field])
           items[field] = `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`
+          items.sortDate = date.toJSON();
         }
         else
           items[field] = data[field]
@@ -69,6 +70,10 @@ export const getPostBySlug = cache((slug: string, fields: string[] = []) => {
   }
 })
 
+const sortByDate = (a: Items, b: Items): number => {
+  return a.sortDate > b.sortDate ? -1 : 1 // sort posts by date in descending order
+}
+
 export const getAllPosts = cache((fields: string[]) => {
   const slugs = getPostSlugs()
   const posts: Items[] = []
@@ -79,20 +84,10 @@ export const getAllPosts = cache((fields: string[]) => {
       posts.push(post)
     })
   })
-  return posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1)) // sort posts by date in ascending order
+  return posts.sort(sortByDate)
 })
 
 export const getAllPostsByCategory = cache((category: string, fields: string[]) => {
-  const slugs = getPostSlugs()
-  const posts: Items[] = []
-  slugs.forEach((slug) => {
-    const categorySlug = slug[0]
-    if (categorySlug === category) {
-      slug.slice(1).forEach((postSlug) => {
-        const post = getPostBySlug(`${categorySlug}/${postSlug}`, fields)
-        posts.push(post)
-      })
-    }
-  })
-  return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1)) // sort posts by date in descending order
+  const allPosts = getAllPosts(fields)
+  return allPosts.filter((post) => post.category === category)
 })
