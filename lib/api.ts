@@ -55,8 +55,10 @@ export const getPostBySlug = cache((slug: string, fields: string[] = []) => {
       }
 
       if (typeof data[field] !== 'undefined') {
-        if (field === 'date')
-          items[field] = data[field].toLocaleDateString('ko-KR');
+        if (field === 'date') {
+          const date = new Date(data[field])
+          items[field] = `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`
+        }
         else
           items[field] = data[field]
       }
