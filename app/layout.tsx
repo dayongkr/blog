@@ -2,7 +2,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import { Noto_Sans } from "next/font/google";
 
-const Noto = Noto_Sans({ subsets: ["latin"], weight: ["400", "700"] });
+const Noto = Noto_Sans({ subsets: ["latin"], weight: ["400", "600", "700"] });
 
 export const metadata = {
   title: "Dayong Blog",
