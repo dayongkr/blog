@@ -13,8 +13,14 @@
   @apply leading-relaxed [&:not(:first-child)]:mt-6;
 }
 
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  @apply mt-12;
+}
+
 .markdown h2 {
-  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors;
 }
 
 .markdown h3 {
@@ -37,8 +43,16 @@
   @apply my-6 ml-6 list-disc [&>li]:mt-2;
 }
 
+.markdown ul ul {
+  @apply my-2;
+}
+
 .markdown ol {
   @apply my-6 ml-6 list-decimal [&>li]:mt-2;
+}
+
+.markdown ol ol {
+  @apply my-2;
 }
 
 .markdown a {
