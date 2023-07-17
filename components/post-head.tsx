@@ -18,7 +18,9 @@ export default function PostHead({
         <p className="text-2xl font-bold capitalize text-teal-600">
           {category} /
         </p>
-        <h2 className="text-5xl font-bold leading-snug">{title}</h2>
+        <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl lg:leading-tight">
+          {title}
+        </h2>
         <div className="mt-5 flex items-center gap-2">
           <Image
             src={ProfileImg}
