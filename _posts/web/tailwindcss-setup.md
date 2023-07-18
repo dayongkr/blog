@@ -55,7 +55,7 @@ VSCode는 일반적으로 string을 작성할 때 자동완성을 제공하지 �
 pnpm i -D prettier prettier-plugin-tailwindcss
 ```
 
-위 명령어를 설치하여 prettier과 tailwindcss plugin을 설치하자.
+위 명령어를 터미널에 입력하여 prettier과 tailwindcss plugin을 설치하자.
 
 ```prettier.config.js
 module.exports = {
