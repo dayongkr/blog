@@ -4,7 +4,7 @@ date: 2023-07-17 23:36:00
 tags: [tailwindcss, css, web]
 ---
 
-요즘 많이 사용되는 utility css인 tailwindcss를 사용하면서 VSCode 에디터에서도 편하게 사용할 수 있도록 세팅하는 방법을 알아보겠습니다.
+요즘 많이 사용되는 utility css인 tailwindcss를 편하게 사용할 수 있도록 세팅하는 방법을 알아보겠습니다.
 
 > [tailwindcss Editor Setup 공식 문서](https://tailwindcss.com/docs/editor-setup)를 참조했습니다.
 
