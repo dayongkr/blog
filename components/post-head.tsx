@@ -15,7 +15,7 @@ export default function PostHead({
   return (
     <>
       <section className="my-10 w-full max-w-screen-md border-b border-slate-200 py-5">
-        <p className="text-lg font-bold capitalize text-teal-600 lg:text-xl">
+        <p className="text-lg font-bold uppercase text-teal-600 lg:text-xl">
           {category} /
         </p>
         <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl lg:leading-tight">

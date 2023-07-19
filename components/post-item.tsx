@@ -40,7 +40,7 @@ export default function PostItem({
           </div>
         )}
       </Link>
-      <p className="font-bold capitalize text-teal-600">{category} /</p>
+      <p className="font-bold uppercase text-teal-600">{category} /</p>
       <h3 className="mt-1 text-2xl font-extrabold">
         <Link href={`/posts/${slug}`}>{title}</Link>
       </h3>
