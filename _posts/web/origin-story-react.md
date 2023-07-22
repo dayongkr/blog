@@ -1,5 +1,5 @@
 ---
-title: Origin Story - React maded by Honeypot 요약 및 정리
+title: React의 탄생 배경 및 성장
 date: 2023-07-12 14:36:00
 tags: [react, javascript, web]
 ---
