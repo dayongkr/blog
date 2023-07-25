@@ -20,14 +20,17 @@ export const mdxComponents: MDXComponents = {
   },
   img: ({ src, alt, width, height }) => {
     return (
-      <Image
-        src={src || "/profile.png"}
-        alt={alt || "alt"}
-        width={(width as number) || 500}
-        height={(height as number) || 300}
-        className="my-5 overflow-hidden rounded-lg"
-        priority={true}
-      />
+      <figure className="my-3 flex w-full flex-col items-center justify-center gap-5">
+        <Image
+          src={src || "/profile.png"}
+          alt={alt || "alt"}
+          width={(width as number) || 500}
+          height={(height as number) || 300}
+          className="overflow-hidden rounded-lg"
+          priority={true}
+        />
+        <span className="text-center text-base text-slate-500">{alt}</span>
+      </figure>
     );
   },
 };
