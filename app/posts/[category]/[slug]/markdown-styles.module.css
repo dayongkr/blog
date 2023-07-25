@@ -82,3 +82,7 @@
 .markdown *:not(pre) > code {
   @apply relative rounded bg-slate-100 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
 }
+
+.markdown p:has(img) {
+  @apply flex flex-col items-center justify-center gap-5;
+}

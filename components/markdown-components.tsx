@@ -20,7 +20,7 @@ export const mdxComponents: MDXComponents = {
   },
   img: ({ src, alt, width, height }) => {
     return (
-      <figure className="my-3 flex w-full flex-col items-center justify-center gap-5">
+      <>
         <Image
           src={src || "/profile.png"}
           alt={alt || "alt"}
@@ -30,7 +30,7 @@ export const mdxComponents: MDXComponents = {
           priority={true}
         />
         <span className="text-center text-base text-slate-500">{alt}</span>
-      </figure>
+      </>
     );
   },
 };
