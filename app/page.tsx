@@ -6,7 +6,6 @@ export default function Home() {
   const posts = getAllPosts([
     "title",
     "date",
-    "tags",
     "slug",
     "category",
     "cover",
@@ -20,20 +19,17 @@ export default function Home() {
           Latest posts
         </h2>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map(
-            ({ title, date, tags, slug, category, cover, excerpt }) => (
-              <PostItem
-                title={title}
-                date={date}
-                tags={tags as unknown as string[]}
-                slug={slug}
-                key={slug}
-                category={category}
-                cover={cover}
-                excerpt={excerpt}
-              />
-            )
-          )}
+          {posts.map(({ title, date, slug, category, cover, excerpt }) => (
+            <PostItem
+              title={title}
+              date={date}
+              slug={slug}
+              key={slug}
+              category={category}
+              cover={cover}
+              excerpt={excerpt}
+            />
+          ))}
         </div>
       </section>
     </>
