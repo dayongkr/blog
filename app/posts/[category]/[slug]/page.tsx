@@ -35,7 +35,7 @@ export default async function Post({
       <main
         className={`${markdownStyles["markdown"]} mb-10 w-full max-w-screen-md border-b border-slate-200 pb-10`}
       >
-        <PostBody content={post.content} />
+        <PostBody content={post.content} category={params.category} />
       </main>
       <div className="w-full max-w-screen-md">
         <Comment />

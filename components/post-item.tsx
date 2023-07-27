@@ -4,7 +4,6 @@ import Link from "next/link";
 interface Props {
   title: string;
   date: string;
-  tags: string[];
   slug: string;
   category?: string;
   cover: string;
@@ -14,7 +13,6 @@ interface Props {
 export default function PostItem({
   title,
   date,
-  tags,
   slug,
   category,
   cover,
@@ -26,7 +24,7 @@ export default function PostItem({
         {cover ? (
           <div className="relative mb-3 flex h-64 w-full items-center justify-center overflow-hidden rounded-lg">
             <Image
-              src={cover}
+              src={`/imgs/${category}/${cover}`}
               alt="post cover"
               className="object-cover transition-transform duration-700 ease-in-out hover:scale-110"
               fill={true}
@@ -46,17 +44,6 @@ export default function PostItem({
       </h3>
       <p className="mt-3 line-clamp-2 text-gray-600">{excerpt}</p>
       <p className="mt-3 text-gray-500">{date}</p>
-      {/* <div className="mt-3 flex gap-2">
-        {tags.map((tag: string) => (
-          <a
-            href="/"
-            className="border-gray-150 flex items-center rounded-full border bg-gray-50 px-2 py-0.5 text-sm text-gray-500 hover:text-black"
-            key={tag}
-          >
-            {tag}
-          </a>
-        ))}
-      </div> */}
     </article>
   );
 }

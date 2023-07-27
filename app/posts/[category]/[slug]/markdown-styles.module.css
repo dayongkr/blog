@@ -31,10 +31,6 @@
   @apply scroll-m-20 text-xl font-semibold tracking-tight;
 }
 
-.markdown p:has(img) {
-  @apply flex w-full justify-center;
-}
-
 .markdown blockquote {
   @apply border-l-2 pl-6 italic;
 }
@@ -84,5 +80,5 @@
 }
 
 .markdown p:has(img) {
-  @apply flex flex-col items-center justify-center gap-5;
+  @apply flex flex-col items-center gap-5;
 }

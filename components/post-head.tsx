@@ -35,7 +35,12 @@ export default function PostHead({
       </section>
       {cover && (
         <section className="relative mb-10 h-96 w-full overflow-hidden rounded-lg">
-          <Image src={cover} alt="cover" fill={true} className="object-cover" />
+          <Image
+            src={`/imgs/${category}/${cover}`}
+            alt="cover"
+            fill={true}
+            className="object-cover"
+          />
         </section>
       )}
     </>

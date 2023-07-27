@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Code } from "bright";
 import { MDXComponents } from "mdx/types";
 
@@ -16,21 +15,6 @@ export const mdxComponents: MDXComponents = {
       <Link href={href || ""} {...props} target="_blank">
         {children}
       </Link>
-    );
-  },
-  img: ({ src, alt, width, height }) => {
-    return (
-      <>
-        <Image
-          src={src || "/profile.png"}
-          alt={alt || "alt"}
-          width={(width as number) || 500}
-          height={(height as number) || 300}
-          className="overflow-hidden rounded-lg"
-          priority={true}
-        />
-        <span className="text-center text-base text-slate-500">{alt}</span>
-      </>
     );
   },
 };
