@@ -14,6 +14,7 @@ export function getPostSlugs() {
   const categorySlugs = getCategorySlugs()
   const postSlugs: string[][] = []
   categorySlugs.forEach((categorySlug) => {
+    if (categorySlug === '.DS_Store') return
     const postDirectory = join(categoryDirectory, categorySlug)
     const postFiles = fs.readdirSync(postDirectory)
     postSlugs.push([categorySlug, ...postFiles.filter((postFile) => postFile.endsWith('.md'))])
