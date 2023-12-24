@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 * {
-  @apply text-slate-950
+  @apply text-slate-950;
 }

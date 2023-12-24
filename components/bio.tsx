@@ -1,8 +1,8 @@
-import Image from "next/image";
-import profilePic from "@/public/profile.png";
-import githubIcon from "@/public/github.svg";
-import linkedInIcon from "@/public/linkedin.svg";
-import emailIcon from "@/public/email.svg";
+import Image from 'next/image'
+import profilePic from '@/public/profile.png'
+import githubIcon from '@/public/github.svg'
+import linkedInIcon from '@/public/linkedin.svg'
+import emailIcon from '@/public/email.svg'
 
 export default function Bio() {
   return (
@@ -56,5 +56,5 @@ export default function Bio() {
         </div>
       </div>
     </section>
-  );
+  )
 }

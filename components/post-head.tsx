@@ -1,5 +1,5 @@
-import Image from "next/image";
-import ProfileImg from "@/public/profile.png";
+import Image from 'next/image'
+import ProfileImg from '@/public/profile.png'
 
 export default function PostHead({
   title,
@@ -7,10 +7,10 @@ export default function PostHead({
   category,
   cover,
 }: {
-  title: string;
-  date: string;
-  category: string;
-  cover: string;
+  title: string
+  date: string
+  category: string
+  cover: string
 }) {
   return (
     <>
@@ -44,5 +44,5 @@ export default function PostHead({
         </section>
       )}
     </>
-  );
+  )
 }

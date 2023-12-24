@@ -1,13 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
 
 interface Props {
-  title: string;
-  date: string;
-  slug: string;
-  category?: string;
-  cover: string;
-  excerpt: string;
+  title: string
+  date: string
+  slug: string
+  category?: string
+  cover: string
+  excerpt: string
 }
 
 export default function PostItem({
@@ -45,5 +45,5 @@ export default function PostItem({
       <p className="mt-3 line-clamp-2 text-gray-600">{excerpt}</p>
       <p className="mt-3 text-gray-500">{date}</p>
     </article>
-  );
+  )
 }

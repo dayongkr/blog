@@ -1,14 +1,14 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { mdxComponents } from "./markdown-components";
-import Image from "next/image";
-import remarkGfm from "remark-gfm";
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import { mdxComponents } from './markdown-components'
+import Image from 'next/image'
+import remarkGfm from 'remark-gfm'
 
-export default function PostBody({
+export default async function PostBody({
   content,
   category,
 }: {
-  content: string;
-  category: string;
+  content: string
+  category: string
 }) {
   return (
     <MDXRemote
@@ -19,8 +19,8 @@ export default function PostBody({
           return (
             <>
               <Image
-                src={`/imgs/${category}/${src}` || "/profile.png"}
-                alt={alt || "alt"}
+                src={`/imgs/${category}/${src}` || '/profile.png'}
+                alt={alt || 'alt'}
                 width={500}
                 height={500}
                 className="h-full max-h-[500px] w-full max-w-[500px] object-contain"
@@ -30,10 +30,10 @@ export default function PostBody({
                 {alt}
               </span>
             </>
-          );
+          )
         },
       }}
-      options={{ mdxOptions: { remarkPlugins: [remarkGfm], format: "md" } }}
+      options={{ mdxOptions: { remarkPlugins: [remarkGfm], format: 'md' } }}
     />
-  );
+  )
 }

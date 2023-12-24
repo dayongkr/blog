@@ -1,16 +1,16 @@
-import { getAllPosts } from "@/lib/api";
-import Bio from "@/components/bio";
-import PostItem from "@/components/post-item";
+import { getAllPosts } from '@/lib/api'
+import Bio from '@/components/bio'
+import PostItem from '@/components/post-item'
 
 export default function Home() {
   const posts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "category",
-    "cover",
-    "excerpt",
-  ]);
+    'title',
+    'date',
+    'slug',
+    'category',
+    'cover',
+    'excerpt',
+  ])
   return (
     <>
       <Bio />
@@ -33,5 +33,5 @@ export default function Home() {
         </div>
       </section>
     </>
-  );
+  )
 }

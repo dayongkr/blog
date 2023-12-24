@@ -1,5 +1,5 @@
-"use client";
-import Giscus from "@giscus/react";
+'use client'
+import Giscus from '@giscus/react'
 
 export default function Comment() {
   return (
@@ -17,5 +17,5 @@ export default function Comment() {
       lang="ko"
       loading="lazy"
     />
-  );
+  )
 }

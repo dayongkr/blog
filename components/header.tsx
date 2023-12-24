@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function Header({ title }: { title: string }) {
   return (
@@ -10,5 +10,5 @@ export default function Header({ title }: { title: string }) {
         <p className="text-2xl font-bold">🚧공사중🚧</p>
       </div>
     </header>
-  );
+  )
 }
